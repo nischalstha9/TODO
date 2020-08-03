@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="task-container">
+    <div id="form-wrapper">
+    <div class="btn btn-sm btn-info"><a style="color:#fff;" href="{% url 'account_logout' %}">Logout</a></div>
+    <div class="btn btn-sm btn-warning"><a style="color:#fff;" href="{% url 'account_change_password' %}">Password</a></div>
+    <legend>@{{ user }}'s To-Do</legend>
+        <form action="" id="form">
+            <div class="flex-wrapper">
+                <div class="" style="flex: 6">
+                    <input type="text" placeholder="Add Task" class="form-control" id="title">
+                    <input type="hidden" value={{ user.id }} id="userId"/>
+                </div>
+                <div class="" style="flex: 1">
+                    <input type="submit" value="Push" class="btn btn-warning" id="submit">
+                </div>
+            </div>
+        </form><br>
+        <input type="text" placeholder="Search Task" class="form-control" id="search">
+    </div>
+    <div id="list-wrapper">
+
+    </div>
+</div>
+{% endblock content %}
